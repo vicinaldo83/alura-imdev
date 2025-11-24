@@ -1,6 +1,6 @@
 const data_paths = {
-    "en": "/src/articles/games.en.json",
-    "pt-br": "/src/articles/games.ptbr.json",
+    "en": "src/articles/games.en.json",
+    "pt-br": "src/articles/games.ptbr.json",
 };
 const cfg_git = "https://raw.githubusercontent.com/Tom-Bruise/PS2-OPL-CFG-Database/refs/heads/master/CFG_en/"
 
