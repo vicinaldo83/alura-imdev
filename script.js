@@ -2,7 +2,10 @@ const data_paths = {
     "en": "src/articles/games.en.json",
     "pt-br": "src/articles/games.ptbr.json",
 };
-const cfg_git = "https://raw.githubusercontent.com/Tom-Bruise/PS2-OPL-CFG-Database/refs/heads/master/CFG_en/"
+const cfg_link = "https://raw.githubusercontent.com/Tom-Bruise/PS2-OPL-CFG-Database/refs/heads/master/CFG_en/"
+
+const art_link = "https://ia800701.us.archive.org/view_archive.php?archive=/11/items/OPLM_ART_2024_09/OPLM_ART_2024_09.zip&file="
+const art_types = ['COV', 'COV2', 'ICO', 'SCR', 'SCR2', 'LAB', 'BG', 'LGO']
 
 
 let data = {};
@@ -92,12 +95,41 @@ function buildArticle(json) {
 }
 
 function createDownloadLinks(Serial) {
-    let flink = cfg_git + Serial + ".cfg"
+    let flink = cfg_link + Serial + ".cfg"
+    let div = document.createElement("div")
 
-    return `<a href="${flink}" target="_blank" class="file-download">
+    for (let i in art_types) {
+        let a = document.createElement("a")
+        a.setAttribute(
+            "href",
+            `${art_link}PS2%2F${Serial}%2F${Serial}_${art_types[i]}.png`
+        )
+        a.setAttribute("target", "_blank")
+        a.innerText = art_types[i]
+        div.appendChild(a)
+    }
+    div.classList.add("art-dropdown-content")
+
+
+
+    return `
+    <a href="${flink}" target="_blank" class="file-download">
         <span class="material-symbols-outlined">file_present</span>
         <span>CFG</span>
-    </a>`
+    </a>
+    <div class="art-dropdown file-download">
+        <span class="material-symbols-outlined">image</span>
+        <span>
+            ART
+            ${div.outerHTML}
+        </span>
+        
+    </div>
+    ` 
+}
+
+function setArtworkUrl(Serial) {
+
 }
 
 addEventListener("DOMContentLoaded", function () {

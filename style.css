@@ -6,6 +6,7 @@
 
 :root {
     --primary-color: #cb4b16;
+    --primary-color-alt: #fdf6e3;
     --secondary-color: #656e6e; 
     --tertiary-color: #9baa2a;
 
@@ -277,4 +278,48 @@ article a:hover {
     align-items: center;
 
     text-align: center;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    justify-items: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+.hat-icon {
+    width: 2rem;
+    aspect-ratio: 1/1;
+
+    margin-right: 10px;
+}
+
+.art-dropdown {
+    position: relative;
+}
+
+.art-dropdown:hover .art-dropdown-content {
+    display: flex;
+}
+
+.art-dropdown-content {
+    display: none;
+    flex-direction: row;
+
+    position: absolute;
+
+    background-color: var(--bg-color);
+    
+    border: solid 1px var(--bg-color-alt);
+    border-radius: 10px;
+
+    z-index: 10;
+}
+
+
+.art-dropdown-content a {
+    margin: 10px 8px 8px 10px;
+    text-decoration: none;
 }
