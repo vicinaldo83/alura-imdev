@@ -11,7 +11,6 @@ As descrições dos jogos estão, originalmente, em inglês e francês. Com a aj
 ## Lista de Tarefas (To-Do)
 
 - Encontrar uma forma de compactar os diferentes tipos de imagens do mesmo jogo em um só arquivo.
-- Implementar um botão para o download das artes.
 - Criar métodos mais simples de pesquisa via requisição (request).
 - Documentar o funcionamento da API.
 
